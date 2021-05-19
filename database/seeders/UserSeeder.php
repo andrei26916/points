@@ -15,13 +15,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1, 90000) as $index) {
+        $i = 1;
+        while ($i <= 90000) {
             User::create(
                 [
                     'lat' => Address::latitude(),
                     'lon' => Address::longitude()
                 ]
             );
+            $i++;
         }
     }
 }
